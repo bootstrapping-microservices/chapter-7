@@ -1,9 +1,9 @@
 
 resource "azurerm_kubernetes_cluster" "cluster" {
-    name                = var.cluster_name
+    name                = var.app_name
     location            = var.location
     resource_group_name = azurerm_resource_group.flixtube.name
-    dns_prefix          = var.dns_prefix # TODO: Is this needed?
+    dns_prefix          = var.app_name
     kubernetes_version  = "1.15.7"
 
     linux_profile {
@@ -20,7 +20,6 @@ resource "azurerm_kubernetes_cluster" "cluster" {
         vm_size         = "Standard_B2ms"
     }
 
-    # https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html
     service_principal {
         client_id     = var.client_id
         client_secret = var.client_secret
