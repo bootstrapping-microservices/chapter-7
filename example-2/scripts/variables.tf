@@ -1,19 +1,6 @@
-variable "container_registry_name" {
+variable "app_name" {
     default = "flixtube"
 }
-
-variable "cluster_name" {
-    default = "flixtube"
-}
-
-variable "dns_prefix" {
-    default = "flixtube"
-}
-
-variable "resource_group_name" {
-    default = "flixtube"
-}
-
 variable location {
   default = "West US"
 }

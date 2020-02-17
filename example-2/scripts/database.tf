@@ -37,17 +37,6 @@ resource "kubernetes_deployment" "database" {
   }
 }
 
-resource "azurerm_public_ip" "database_ip" {
-    name                = "database-public-ip"
-    location            = azurerm_kubernetes_cluster.cluster.location
-    resource_group_name = "MC_${azurerm_resource_group.flixtube.name}_${var.cluster_name}_${azurerm_resource_group.flixtube.location}"
-    allocation_method   = "Static"
-}
-
-output "database_ip_output" {
-    value = azurerm_public_ip.database_ip.ip_address
-}
-
 resource "kubernetes_service" "database" {
     metadata {
         name = "database"
@@ -55,7 +44,7 @@ resource "kubernetes_service" "database" {
 
     spec {
         selector = {
-            pod = kubernetes_deployment.database.metadata.0.labels.pod
+            pod = kubernetes_deployment.database.metadata[0].labels.pod
         }   
 
         session_affinity = "ClientIP"
@@ -66,6 +55,5 @@ resource "kubernetes_service" "database" {
         }
 
         type             = "LoadBalancer"
-        load_balancer_ip = azurerm_public_ip.database_ip.ip_address
     }
 }
