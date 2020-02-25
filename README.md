@@ -1,4 +1,4 @@
-# Chapter-5
+# Chapter-7
 
 Code and examples for Chapter 7 of [Bootstrapping Microservices](http://bit.ly/2o0aDsP).
 
