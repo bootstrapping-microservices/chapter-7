@@ -10,12 +10,6 @@ resource "kubernetes_deployment" "database" {
   spec {
     replicas = 1
 
-    selector {
-      match_labels = {
-        pod = "database"
-      }
-    }
-
     template {
       metadata {
         labels = {
@@ -49,7 +43,6 @@ resource "kubernetes_service" "database" {
 
         port {
             port        = 27017
-            target_port = 27017
         }
     }
 }
