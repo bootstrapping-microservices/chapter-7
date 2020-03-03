@@ -25,3 +25,4 @@ example-3/scripts/terraform.tfstate
 example-3/scripts/.terraform/
 example-3/video-streaming/node_modules/
 example-4/video-streaming/node_modules/
+example-1/scripts/.terraform.tfstate.lock.info

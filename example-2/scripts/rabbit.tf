@@ -50,7 +50,6 @@ resource "kubernetes_service" "rabbit" {
 
         port {
             port        = 5672
-            target_port = 5672
         }
     }
 }
@@ -65,11 +64,8 @@ resource "kubernetes_service" "rabbit_dashboard" {
             pod = kubernetes_deployment.rabbit.metadata[0].labels.pod
         }   
 
-        session_affinity = "ClientIP"
-
         port {
             port        = 15672
-            target_port = 15672
         }
 
         type             = "LoadBalancer"

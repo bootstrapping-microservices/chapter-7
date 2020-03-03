@@ -47,11 +47,8 @@ resource "kubernetes_service" "database" {
             pod = kubernetes_deployment.database.metadata[0].labels.pod
         }   
 
-        session_affinity = "ClientIP"
-
         port {
             port        = 27017
-            target_port = 27017
         }
 
         type             = "LoadBalancer"

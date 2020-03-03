@@ -10,6 +10,12 @@ resource "kubernetes_deployment" "database" {
   spec {
     replicas = 1
 
+    selector {
+      match_labels = {
+        pod = "database"
+      }
+    }
+
     template {
       metadata {
         labels = {
