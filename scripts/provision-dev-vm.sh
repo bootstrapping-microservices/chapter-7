@@ -9,8 +9,8 @@ export DEBIAN_FRONTEND=noninteractive
 # Install Terraform
 #
 sudo apt-get -yq install unzip
-wget https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip
-unzip terraform_0.12.20_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
+unzip terraform_0.12.29_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 terraform --version 
 
@@ -55,7 +55,7 @@ sudo service docker restart
 # Install Kubectl
 # https://kubernetes.io/docs/tasks/tools/install-kubectl/
 #
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.3/bin/linux/amd64/kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.6/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 kubectl version --client
