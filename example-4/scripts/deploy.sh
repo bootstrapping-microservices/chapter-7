@@ -1,5 +1,5 @@
 #
-# Provision a Kubernetes cluster to host a microservices application.
+# Runs Terraform to provision a Kubernetes cluster and deploy microservices to it.
 #
 
 set -u # or set -o nounset

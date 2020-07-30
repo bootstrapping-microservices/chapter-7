@@ -1,3 +1,5 @@
+# Deploys a MongoDB database to the Kubernetes cluster.
+
 resource "kubernetes_deployment" "database" {
   metadata {
     name = "database"

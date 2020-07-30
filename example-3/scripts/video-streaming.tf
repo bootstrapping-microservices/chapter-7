@@ -1,3 +1,5 @@
+# Deploys the Video streaming microservice to the Kubernetes cluster.
+
 locals {
     service_name = "video-streaming"
     login_server = azurerm_container_registry.container_registry.login_server

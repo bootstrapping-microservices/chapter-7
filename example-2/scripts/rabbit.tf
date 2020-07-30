@@ -1,3 +1,4 @@
+# Deploys a RabbitMQ server to the Kubernetes cluster.
 
 resource "kubernetes_deployment" "rabbit" {
   metadata {
