@@ -5,6 +5,7 @@ example-1/terraform.tfstate.backup
 example-1/.terraform/
 ubuntu-xenial-16.04-cloudimg-console.log
 example-1/.terraform.tfstate.lock.info
+example-1/scripts/.terraform.lock.hcl
 todo.txt
 example-2/terraform.tfstate.backup
 example-2/terraform.tfstate
